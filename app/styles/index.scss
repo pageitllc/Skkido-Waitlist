@@ -1,0 +1,143 @@
+@import "./_tokens.scss";
+
+// *{
+//     border: solid 1px red !important;
+// }
+@font-face {
+    font-family: hand-writing;
+    font-style: normal;
+    src: url(../assets/fonts/hand-writing.woff2)  format("woff2");;
+}
+
+
+@font-face {
+  font-family: "ProximaNova";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/proximanova_light.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: "ProximaNova";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/proximanova_regular.woff2") format("woff2");
+}
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-weight: normal;
+}
+
+body {
+    font-family: 'ProximaNova', sans-serif;
+    background: var(--fu-color-bg, #fff);
+    color: var(--fu-color-text);
+    margin-left: auto;
+    margin-right: auto;
+    // overflow: hidden;
+
+}
+
+
+.sk-container {
+    max-width: var(--skkido-width);
+    width: 100%;
+    padding-right: calc(var(--skkido-gutter-y) * .5);
+    padding-left: calc(var(--skkido-gutter-x) * .5);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.py-5 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.flex {
+    display: flex;
+    gap: 1rem;
+
+    &--space {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &--center {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &--column {
+        flex-direction: column;
+    }
+}
+
+.section-title {
+    font-size: 5rem;
+    font-family: 'ProximaNova', sans-serif;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    .section-title {
+        font-size: 2.6rem;
+    }
+
+    .sk-container {
+        flex-wrap: wrap;
+    }
+
+
+}
+
+/* Extra small (mobile) */
+@media (max-width: 480px) {}
+
+/* Small devices (large mobile / phablet) */
+@media (max-width: 640px) {}
+
+/* Medium devices (tablet portrait) */
+@media (max-width: 768px) {
+    .grid {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+  }
+}
+
+/* Large devices (tablet landscape / small laptop) */
+@media (max-width: 1024px) {
+    .task-image {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Extra large devices (desktop) */
+@media (max-width: 1280px) {
+    .task-image {
+        width: 100%;
+        max-width: 400px;
+    }
+
+}
+
+/* 2XL (large desktops / wide screens) */
+@media (max-width: 1536px) {}

@@ -1,0 +1,19 @@
+@import "./normalize.css";
+
+$primary-color-base: #4F2428;
+$secondary-color-base:#FFD37B;
+$app-gutter-y: 1.5rem;
+$app-gutter-x: 1.5rem;
+$app-width: 1440px;
+$app-layout-spacing:1rem 0;
+
+
+:root {
+    --skkido-color-primary: #4F2428;
+    --skkido-color-primary-light: #7A4B4E;
+    --skkido-color-secondary: #{$secondary-color-base};
+    --skkido-gutter-y: #{$app-gutter-y};
+    --skkido-gutter-x: #{$app-gutter-x};
+    --skkido-width: #{$app-width};
+    --sk-space-4: #{$app-layout-spacing};
+}
