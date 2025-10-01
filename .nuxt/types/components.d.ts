@@ -18,6 +18,7 @@ interface _GlobalComponents {
     'AppHeader': typeof import("../../app/components/AppHeader.vue")['default']
     'ComplaintBubble': typeof import("../../app/components/ComplaintBubble.vue")['default']
     'FeatureCard': typeof import("../../app/components/FeatureCard.vue")['default']
+    'SubscriberCount': typeof import("../../app/components/SubscriberCount.vue")['default']
     'WaitlistModal': typeof import("../../app/components/WaitlistModal.vue")['default']
     'HomePageHomeHero': typeof import("../../app/components/home-page/HomeHero.vue")['default']
     'HomePageHomeSectionFeature': typeof import("../../app/components/home-page/HomeSectionFeature.vue")['default']
@@ -52,6 +53,7 @@ interface _GlobalComponents {
     'LazyAppHeader': LazyComponent<typeof import("../../app/components/AppHeader.vue")['default']>
     'LazyComplaintBubble': LazyComponent<typeof import("../../app/components/ComplaintBubble.vue")['default']>
     'LazyFeatureCard': LazyComponent<typeof import("../../app/components/FeatureCard.vue")['default']>
+    'LazySubscriberCount': LazyComponent<typeof import("../../app/components/SubscriberCount.vue")['default']>
     'LazyWaitlistModal': LazyComponent<typeof import("../../app/components/WaitlistModal.vue")['default']>
     'LazyHomePageHomeHero': LazyComponent<typeof import("../../app/components/home-page/HomeHero.vue")['default']>
     'LazyHomePageHomeSectionFeature': LazyComponent<typeof import("../../app/components/home-page/HomeSectionFeature.vue")['default']>

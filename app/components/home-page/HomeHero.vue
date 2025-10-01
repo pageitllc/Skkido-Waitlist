@@ -13,7 +13,7 @@
                         <img v-for="(avatar, i) in avatars" :key="i" :src="avatar" alt="Creator avatar"
                             class="creators__avatar" />
                     </div>
-                    <span  v-if="subscriberCount" class="creators__text">{{ subscriberCount }} + professionals have secured their spot!</span>
+                  <SubscriberCount />
                 </div>
 
 
@@ -32,6 +32,7 @@
 </template>
 
 <script setup lang="ts">
+import SubscriberCount from '../SubscriberCount.vue';
 const avatars = [
     'avatars/avatar1.png',
     'avatars/avatar2.png',
@@ -44,26 +45,6 @@ const avatars = [
 
 
 
-import { ref, onMounted } from "vue";
-
-const subscriberCount = ref<number | null>(null);
-
-onMounted(async () => {
-  try {
-    const config = useRuntimeConfig();
-    const res = await $fetch<{ subscribers: number }>(
-      `${config.public.apiBase}/list-stats`,
-      {
-        headers: {
-          "x-api-key": config.public.apiKey
-        }
-      }
-    );
-    subscriberCount.value = res.subscribers;
-  } catch (err) {
-    console.error("Failed to load subscriber count", err);
-  }
-});
 
 </script>
 

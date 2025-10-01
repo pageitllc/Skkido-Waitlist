@@ -22,7 +22,7 @@
         <p class="success-text">
           Thanks for signing up 🎉 You’ll be among the first to hear when Skkido goes live.
         </p>
-
+         
 
         <button @click="inviteFriend" class="success-button">
           <Share2 /> Invite a Friend
@@ -51,9 +51,11 @@
         <p>
           Join our extensive waitlist today to spark connection and get notified when we launch
         </p>
+        
         <div class="avatars mb-4">
           <img v-for="(avatar, index) in avatars" :key="index" :src="avatar" :alt="`Community member ${index + 1}`" />
         </div>
+        
 
         <form class="cta-form" @submit.prevent="handleSubmit">
           <input ref="nameInput" v-model="form.name" type="text" name="fullName" placeholder="Enter your full name"
