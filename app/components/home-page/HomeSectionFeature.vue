@@ -1,27 +1,28 @@
 <template>
-
+<client-only>
   <section class="sk-hero-section founders-section ">
     <div class="sk-container grid">
+      
       <div class="sk-hero-section__col-1">
-        <h1 class="section-title">Built for  <br> <span style="color: #C4C4C4;"> your work</span></h1>
+        <h1 data-aos="fade-up" data-aos-delay="50" class="section-title">Built for  <br> <span style="color: #C4C4C4;"> your work</span></h1>
       </div>
 
       <div class="sk-hero-section__col-2">
-        <FeatureCard :icon="FolderKanban" title="One trusted workspace for your business"
+        <FeatureCard  data-aos="fade-down" data-aos-delay="50" :icon="FolderKanban" title="One trusted workspace for your business"
           text="Manage your projects, clients, and files without juggling multiple apps. Everything important lives in one place." bgColor="#FFC178" />
 
-        <FeatureCard :icon="CreditCard" title="Get paid faster, with less stress"
+        <FeatureCard data-aos="fade-down" data-aos-delay="100" :icon="CreditCard" title="Get paid faster, with less stress"
           text="Send contracts and invoices with built-in payments, so you always know where your money stands. With so many payment methods to choose from, your clients can pay in the way that works best for them — and you get paid on time"
           bgColor="#006FEE" />
 
-        <FeatureCard :icon="Users" title="Work better with clients and teams"
+        <FeatureCard data-aos="fade-down" data-aos-delay="150" :icon="Users" title="Work better with clients and teams"
           text="Give clients and team members a shared space to track progress and collaborate with clarity."
           bgColor="#A2878B" />
 
       </div>
     </div>
   </section>
-
+</client-only>
 </template>
 
 <script lang="ts" setup>

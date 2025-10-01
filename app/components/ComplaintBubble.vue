@@ -1,5 +1,5 @@
 <template>
-  <div class="complaint">
+  <div class="complaint" :style="{ '--bubble-color': bubbleColor || '#4a90e2' }">
     <!-- Avatar with small circles -->
     <div class="complaint-avatar">
       <img :src="avatar" alt="avatar" />
@@ -34,6 +34,7 @@ defineProps<{
   position: relative;
   width: 60px;
   height: 60px;
+  margin-top: -2rem;
 
   img {
     width: 60px;
@@ -51,7 +52,7 @@ defineProps<{
     &--big {
       width: 30px;
       height: 30px;
-      background-color: #4a90e2;
+      background-color: color-mix(in srgb, var(--bubble-color) 80%, black);
       bottom: -5px;
       right: -10px;
     }
@@ -59,7 +60,7 @@ defineProps<{
     &--small {
       width: 20px;
       height: 20px;
-      background-color: #d0d9ff;
+      background-color: color-mix(in srgb, var(--bubble-color) 60%, white);
       bottom: -15px;
       right: -20px;
     }

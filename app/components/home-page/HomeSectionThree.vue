@@ -3,7 +3,7 @@
   <section class="sk-container sk-hero-section founders-section ">
     <div class="grid">
       <div class="sk-hero-section__col-1">
-        <h1 class="section-title">Founder’s <br> <span style="color: #C4C4C4;">Message</span></h1>
+        <h1 data-aos="fade-up" data-aos-delay="50" class="section-title">Founder’s <br> <span style="color: #C4C4C4;">Message</span></h1>
       </div>
 
       <div class="sk-hero-section__col-2">

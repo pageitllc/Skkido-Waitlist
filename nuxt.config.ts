@@ -7,8 +7,10 @@ export default defineNuxtConfig({
     brevoListId: process.env.BREVO_LIST_ID,
     recaptchaSecret: process.env.RECAPTCHA_SECRET,
     public: {
-      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
-    },
+      apiBase: process.env.API_BASE || "http://localhost:8000/api", 
+      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY || "",
+      apiKey: process.env.API_KEY || "",
+    }
   },
   app: {
     head: {

@@ -8,28 +8,29 @@
       <p class="complaints-sub">One workspace, one solution.</p>
     </div>
 
+      <client-only>
     <div class="chat-container">
-      <ComplaintBubble avatar="/avatars/avatar1.png"
+      <ComplaintBubble  data-aos="zoom-in" data-aos-delay="50" avatar="/avatars/avatar1.png"
         message="Sometimes clients don’t even make payment after I’ve delivered the work — I have no protection."
         bubbleColor="#1E63E9" class="bubble bubble--1" />
 
-      <ComplaintBubble avatar="/avatars/avatar2.png"
+      <ComplaintBubble  data-aos="zoom-in" data-aos-delay="100" avatar="/avatars/avatar2.png"
         message="My clients need a proper platform to see project progress. Notion isn’t built for that, too many steps for simple updates."
         bubbleColor="#F35106" class="bubble bubble--2" />
 
-      <ComplaintBubble avatar="/avatars/avatar3.png"
+      <ComplaintBubble  data-aos="zoom-in" data-aos-delay="150" avatar="/avatars/avatar3.png"
         message="When I bring in other professionals to help on a project, I can’t track their tasks or payments properly. It turns into a mess of spreadsheets, chats, and manual follow-ups."
-        bubbleColor="#FAD9C1" class="bubble bubble--3" />
+        bubbleColor="#2A0808" class="bubble bubble--3" />
 
-      <ComplaintBubble avatar="/avatars/avatar4.png"
+      <ComplaintBubble  data-aos="zoom-in" data-aos-delay="200" avatar="/avatars/avatar4.png"
         message="Managing different clients across emails, chats, and scattered files is a nightmare. I waste hours just trying to keep everything in one place instead of focusing on the actual work."
         bubbleColor="#2A7D2E" class="bubble bubble--4" />
 
-      <ComplaintBubble avatar="/avatars/avatar5.png"
+      <ComplaintBubble  data-aos="zoom-in" data-aos-delay="250" avatar="/avatars/avatar5.png"
         message="I can’t keep paying for Slack, Notion, a CRM, and a project management tool. It’s too expensive and fragmented."
         bubbleColor="#FFD600" class="bubble bubble--5" />
     </div>
-
+</client-only>
 
   </section>
 </template>

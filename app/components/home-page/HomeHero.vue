@@ -3,17 +3,17 @@
         <div class="sk-hero-section">
             <div class="sk-hero-section__col-1">
                 <span class="pill">Coming Soon 🤩</span>
-                <h1>Work smarter. <br> Get paid securely.</h1>
-                <p>Skkido is the all-in-one workspace for independent professionals and small businesses to manage
+                <h1 data-aos="fade-up" data-aos-delay="0">Work smarter. <br> Get paid securely.</h1>
+                <p data-aos="fade-up" data-aos-delay="150">Skkido is the all-in-one workspace for independent professionals and small businesses to manage
                     projects, clients, contracts, invoices, and payement in one place.</p>
 
 
-                <div class="creators">
+                <div  class="creators">
                     <div class="creators__avatars">
                         <img v-for="(avatar, i) in avatars" :key="i" :src="avatar" alt="Creator avatar"
                             class="creators__avatar" />
                     </div>
-                    <span class="creators__text">27+ professionals have secured their spot!</span>
+                    <span  v-if="subscriberCount" class="creators__text">{{ subscriberCount }} + professionals have secured their spot!</span>
                 </div>
 
 
@@ -22,14 +22,16 @@
                     Put me on the waitlist
                 </NuxtLink>
             </div>
+            <client-only>
             <div class="sk-hero-section__col-2">
-                <img src="~/assets/images/Frame-48445.png" class="task-image" width="100%" alt=""></img>
+                <img data-aos="fade-up" data-aos-delay="50" src="~/assets/images/Frame-48445.png" class="task-image" width="100%" alt=""></img>
             </div>
+            </client-only>
         </div>
     </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const avatars = [
     'avatars/avatar1.png',
     'avatars/avatar2.png',
@@ -39,6 +41,30 @@ const avatars = [
     'avatars/avatar3.png',
 
 ]
+
+
+
+import { ref, onMounted } from "vue";
+
+const subscriberCount = ref<number | null>(null);
+
+onMounted(async () => {
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch<{ subscribers: number }>(
+      `${config.public.apiBase}/list-stats`,
+      {
+        headers: {
+          "x-api-key": config.public.apiKey
+        }
+      }
+    );
+    subscriberCount.value = res.subscribers;
+  } catch (err) {
+    console.error("Failed to load subscriber count", err);
+  }
+});
+
 </script>
 
 <style lang="scss" scoped>

@@ -93,42 +93,53 @@ const submitted = ref(false);
 const nameInput = ref<HTMLInputElement | null>(null);
 
 async function handleSubmit() {
+  loading.value = true;
   try {
-    loading.value = true;
-
-
     const g = (window as any).grecaptcha;
+
     if (!g) {
-      alert("Captcha not loaded, please try again.");
-      return;
+      throw new Error("Captcha not loaded, please try again.");
     }
 
-    const token = await new Promise<string>((resolve, reject) => {
+    // ✅ Get Recaptcha token
+    const token: string = await new Promise((resolve, reject) => {
       g.ready(() => {
-        g.execute(useRuntimeConfig().public.recaptchaSiteKey, { action: "subscribe" })
+        g.execute(config.public.recaptchaSiteKey, { action: "subscribe" })
           .then(resolve)
           .catch(reject);
       });
     });
 
-
-    await $fetch("/api/subscribe", {
+    // ✅ Call Laravel microservice
+    await $fetch(`${config.public.apiBase}/subscribe`, {
       method: "POST",
-      body: {
-        ...form.value,
-        recaptchaToken: token,
+      headers: {
+        "x-api-key": config.public.apiKey
       },
+      body: {
+        name: form.value.name,
+        email: form.value.email,
+        recaptchaToken: token
+      }
     });
 
+    // ✅ Success: show thank-you state
     submitted.value = true;
     form.value = { name: "", email: "" };
     await nextTick();
   } catch (err: any) {
-    alert(err?.data?.statusMessage || "Something went wrong, please try again.");
+    console.error("Subscribe error:", err);
+
+    // Nuxt $fetch error response will have .data.message
+    const backendMessage =
+      err?.data?.message || err?.message || "Something went wrong, please try again.";
+
+    alert(backendMessage);
   } finally {
     loading.value = false;
   }
 }
+
 
 
 async function inviteFriend() {
@@ -203,15 +214,15 @@ useHead({
     { name: "twitter:image", content: "https://skkido.com/og-image.jpg" },
   ],
   script: [
-   
-     {
-      key: "recaptcha", 
+
+    {
+      key: "recaptcha",
       src: `https://www.google.com/recaptcha/api.js?render=${config.public.recaptchaSiteKey}`,
       async: true,
       defer: true,
     },
 
-    
+
   ],
 });
 

@@ -13,3 +13,7 @@
 <style>
 @import url(../app/styles/index.scss);
 </style>
+
+<script>
+
+</script>
