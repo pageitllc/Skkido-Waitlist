@@ -7,7 +7,7 @@
 
    
     <AppFooter />
- 
+ <CookieConsent />
 </template>
 
 <style>

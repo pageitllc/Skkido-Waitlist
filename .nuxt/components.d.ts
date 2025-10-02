@@ -17,6 +17,7 @@ type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}
 export const AppFooter: typeof import("../app/components/AppFooter.vue")['default']
 export const AppHeader: typeof import("../app/components/AppHeader.vue")['default']
 export const ComplaintBubble: typeof import("../app/components/ComplaintBubble.vue")['default']
+export const CookieConsent: typeof import("../app/components/CookieConsent.vue")['default']
 export const FeatureCard: typeof import("../app/components/FeatureCard.vue")['default']
 export const SubscriberCount: typeof import("../app/components/SubscriberCount.vue")['default']
 export const WaitlistModal: typeof import("../app/components/WaitlistModal.vue")['default']
@@ -52,6 +53,7 @@ export const NuxtRouteAnnouncer: typeof import("../node_modules/nuxt/dist/app/co
 export const LazyAppFooter: LazyComponent<typeof import("../app/components/AppFooter.vue")['default']>
 export const LazyAppHeader: LazyComponent<typeof import("../app/components/AppHeader.vue")['default']>
 export const LazyComplaintBubble: LazyComponent<typeof import("../app/components/ComplaintBubble.vue")['default']>
+export const LazyCookieConsent: LazyComponent<typeof import("../app/components/CookieConsent.vue")['default']>
 export const LazyFeatureCard: LazyComponent<typeof import("../app/components/FeatureCard.vue")['default']>
 export const LazySubscriberCount: LazyComponent<typeof import("../app/components/SubscriberCount.vue")['default']>
 export const LazyWaitlistModal: LazyComponent<typeof import("../app/components/WaitlistModal.vue")['default']>

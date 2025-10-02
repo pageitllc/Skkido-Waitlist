@@ -17,6 +17,7 @@ interface _GlobalComponents {
       'AppFooter': typeof import("../../app/components/AppFooter.vue")['default']
     'AppHeader': typeof import("../../app/components/AppHeader.vue")['default']
     'ComplaintBubble': typeof import("../../app/components/ComplaintBubble.vue")['default']
+    'CookieConsent': typeof import("../../app/components/CookieConsent.vue")['default']
     'FeatureCard': typeof import("../../app/components/FeatureCard.vue")['default']
     'SubscriberCount': typeof import("../../app/components/SubscriberCount.vue")['default']
     'WaitlistModal': typeof import("../../app/components/WaitlistModal.vue")['default']
@@ -52,6 +53,7 @@ interface _GlobalComponents {
       'LazyAppFooter': LazyComponent<typeof import("../../app/components/AppFooter.vue")['default']>
     'LazyAppHeader': LazyComponent<typeof import("../../app/components/AppHeader.vue")['default']>
     'LazyComplaintBubble': LazyComponent<typeof import("../../app/components/ComplaintBubble.vue")['default']>
+    'LazyCookieConsent': LazyComponent<typeof import("../../app/components/CookieConsent.vue")['default']>
     'LazyFeatureCard': LazyComponent<typeof import("../../app/components/FeatureCard.vue")['default']>
     'LazySubscriberCount': LazyComponent<typeof import("../../app/components/SubscriberCount.vue")['default']>
     'LazyWaitlistModal': LazyComponent<typeof import("../../app/components/WaitlistModal.vue")['default']>
