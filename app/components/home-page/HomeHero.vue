@@ -5,7 +5,7 @@
                 <span class="pill">Coming Soon 🤩</span>
                 <h1 data-aos="fade-up" data-aos-delay="0">Work smarter. <br> Get paid securely.</h1>
                 <p data-aos="fade-up" data-aos-delay="150">Skkido is the all-in-one workspace for independent professionals and small businesses to manage
-                    projects, clients, contracts, invoices, and payement in one place.</p>
+                    projects, clients, contracts, invoices, and payment in one place.</p>
 
 
                 <div  class="creators">
