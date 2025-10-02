@@ -12,7 +12,7 @@
             You read all the way down here, so don’t try telling us you’re not interested.
             Sign up for the waitlist. Then never look back.
           </p>
-          <NuxtLink to="/join-skkido" class="cta-button">I’m in, put me on the list</NuxtLink>
+          <NuxtLink to="/waitlist" class="cta-button">I’m in, put me on the list</NuxtLink>
         </div>
       </div>
     </section>

@@ -18,7 +18,7 @@
 
 
 
-                <NuxtLink to="/join-skkido" class="btn">
+                <NuxtLink to="/waitlist" class="btn">
                     Put me on the waitlist
                 </NuxtLink>
             </div>
