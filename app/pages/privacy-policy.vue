@@ -1,4 +1,5 @@
 <template>
+        <AppHeader />
   <div class="privacy-container">
     <h1>Privacy Policy</h1>
     <p><strong>Last updated: October 2025</strong></p>
@@ -171,6 +172,7 @@
     <p>Postal: Pageitio LLC (Skkido), Wyoming, USA</p>
 
   </div>
+     <AppFooter />
 </template>
 
 <script setup>

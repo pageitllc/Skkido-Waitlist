@@ -60,6 +60,9 @@ body {
     padding-bottom: 5rem;
 }
 
+.pt-10{
+    padding-top: 10rem;
+}
 .flex {
     display: flex;
     gap: 1rem;
@@ -79,8 +82,14 @@ body {
     }
 }
 
+ h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
 .section-title {
-    font-size: 5rem;
+    font-size: 3.375rem;
     font-family: 'ProximaNova', sans-serif;
 }
 
@@ -141,3 +150,4 @@ body {
 
 /* 2XL (large desktops / wide screens) */
 @media (max-width: 1536px) {}
+

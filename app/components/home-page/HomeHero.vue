@@ -2,12 +2,9 @@
     <section class="sk-container py-5">
         <div class="sk-hero-section">
             <div class="sk-hero-section__col-1">
-                <span class="pill">Coming Soon 🤩</span>
-                <h1 data-aos="fade-up" data-aos-delay="0">Work smarter. <br> Get paid securely.</h1>
-                <p data-aos="fade-up" data-aos-delay="150">Skkido is the all-in-one workspace for independent professionals and small businesses to manage
-                    projects, clients, contracts, invoices, and payment in one place.</p>
-
-
+                <span class="pill">Alpha mode: activated! ⚡️ Dive in early.</span>
+                <h1 data-aos="fade-up" data-aos-delay="0">The client operations workspace for service businesses.</h1>
+                <p data-aos="fade-up" data-aos-delay="150">Run your entire service business from one place. Skkido brings CRM, projects, contracts, invoicing, payments, and client communication together into a single, connected workspace built for client work.</p>
                 <div  class="creators">
                     <div class="creators__avatars">
                         <img v-for="(avatar, i) in avatars" :key="i" :src="avatar" alt="Creator avatar"
@@ -15,9 +12,6 @@
                     </div>
                     <span  v-if="subscriberCount" class="creators__text">{{ subscriberCount }} + professionals have secured their spot!</span>
                 </div>
-
-
-
                 <NuxtLink to="/waitlist" class="btn">
                     Put me on the waitlist
                 </NuxtLink>

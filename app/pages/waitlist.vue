@@ -1,4 +1,5 @@
 <template>
+      <AppHeader />
   <section class="sk-container cta-container">
     <div class="cta-content">
 
@@ -74,6 +75,7 @@
         alt="Happy team working together around a laptop" />
     </div>
   </section>
+       <AppFooter />
 </template>
 
 <script setup lang="ts">
@@ -103,7 +105,7 @@ async function handleSubmit() {
       throw new Error("Captcha not loaded, please try again.");
     }
 
-    // ✅ Get Recaptcha token
+    //  Get Recaptcha token
     const token: string = await new Promise((resolve, reject) => {
       g.ready(() => {
         g.execute(config.public.recaptchaSiteKey, { action: "subscribe" })
@@ -112,7 +114,7 @@ async function handleSubmit() {
       });
     });
 
-    // ✅ Call Laravel microservice
+    // Call Laravel microservice
     await $fetch(`${config.public.apiBase}/subscribe`, {
       method: "POST",
       headers: {
@@ -125,7 +127,7 @@ async function handleSubmit() {
       }
     });
 
-    // ✅ Success: show thank-you state
+    //  Success: show thank-you state
     submitted.value = true;
     form.value = { name: "", email: "" };
     await nextTick();

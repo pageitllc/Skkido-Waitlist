@@ -2,7 +2,6 @@
 <client-only>
   <section class="sk-hero-section founders-section ">
     <div class="sk-container grid">
-      
       <div class="sk-hero-section__col-1">
         <h1 data-aos="fade-up" data-aos-delay="50" class="section-title">Built for  <br> <span style="color: #C4C4C4;"> your work</span></h1>
       </div>
@@ -34,6 +33,7 @@ import { FolderKanban, Users, CreditCard } from "lucide-vue-next";
 .sk-hero-section {
   display: flex;
   padding: 4rem 2rem;
+  height: 100vh;
 }
 
 .founders-section {
@@ -44,8 +44,11 @@ import { FolderKanban, Users, CreditCard } from "lucide-vue-next";
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
 
+  .sk-hero-section {
+    height: 100% !important;
+  }
   .founders-section {
     padding: 2rem 1rem !important;
   }
@@ -55,11 +58,16 @@ import { FolderKanban, Users, CreditCard } from "lucide-vue-next";
     padding-top: 0;
   }
 }
+.sk-hero-section__col-1 {
+  display: flex;
+  align-items: center;
+}
 
 .sk-hero-section__col-2 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  justify-content: center;
 }
 
 .founder-name {

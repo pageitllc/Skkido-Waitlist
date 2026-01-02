@@ -1,6 +1,6 @@
 <template>
 
-  <section class="sk-container sk-hero-section founders-section ">
+  <section class="sk-container sk-hero-section founders-section home-section-three ">
     <div class="grid">
       <div class="sk-hero-section__col-1">
         <h1 data-aos="fade-up" data-aos-delay="50" class="section-title">Founder’s <br> <span style="color: #C4C4C4;">Message</span></h1>
@@ -34,9 +34,19 @@
 </script>
 
 <style lang="scss" scoped>
+
+  .home-section-three {
+  position: relative;
+  z-index: 2;        
+  min-height: 100%;   
+  background: #fff;  
+}
+
+
 .sk-hero-section {
   display: flex;
   padding: 4rem 2rem;
+  height: 75vh;
 }
 
 .founders-section {
@@ -63,11 +73,16 @@
     padding-top: 0;
   }
 }
+.sk-hero-section__col-1 {
+  display: flex;
+  align-items: center;
+}
 
 .sk-hero-section__col-2 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  justify-content: center;
 }
 
 .founder-name {

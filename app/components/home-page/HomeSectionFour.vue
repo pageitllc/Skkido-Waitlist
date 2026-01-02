@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <section class="sk-container">
+  <section >
+    <div class="sk-container p-0">
       <div class="cta-section">
         <div class="cta-image">
-          <img src="/positive-young-lady-freelancer-eyewear-keyboards-information-laptop-computer.jpg"
+          <NuxtImg src="/social-integration-working-team.jpg"
             alt="Happy user on laptop" />
         </div>
         <div class="cta-content">
@@ -15,9 +15,9 @@
           <NuxtLink to="/waitlist" class="cta-button">I’m in, put me on the list</NuxtLink>
         </div>
       </div>
-    </section>
+    </div>
 
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
@@ -29,7 +29,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 400px;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
 }
 

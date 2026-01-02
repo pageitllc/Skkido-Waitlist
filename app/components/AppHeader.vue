@@ -17,7 +17,7 @@
 .header {
   padding: var(--sk-space-4);
   display: flex;
-  justify-content: end;
+  justify-content: start;
 
   &__logo {
     width: 104.99px;

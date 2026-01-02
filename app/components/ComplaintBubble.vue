@@ -1,13 +1,13 @@
 <template>
   <div class="complaint" :style="{ '--bubble-color': bubbleColor || '#4a90e2' }">
-    <!-- Avatar with small circles -->
+ 
     <div class="complaint-avatar">
       <img :src="avatar" alt="avatar" />
       <span class="circle circle--big"></span>
       <span class="circle circle--small"></span>
     </div>
 
-    <!-- Speech bubble -->
+
     <div class="complaint-bubble" :style="{ backgroundColor: bubbleColor }">
       <p>{{ message }}</p>
     </div>

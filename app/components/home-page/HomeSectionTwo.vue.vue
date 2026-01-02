@@ -1,11 +1,10 @@
 <template>
   <section class="sk-hero-section py-5">
     <div class="hero-title">
+        <h2 class="complaints-sub">One problem.</h2>
       <h2 class="complaints-title">
-        <span class="handwritten">One problem</span><br />
-        Countless voices
+        <span class="handwritten">Many frustrations.</span>
       </h2>
-      <p class="complaints-sub">One workspace, one solution.</p>
     </div>
 
       <client-only>
@@ -41,7 +40,7 @@
   margin-bottom: 5rem;
 
   h2 {
-    font-size: 2.5rem;
+    font-size:3.375rem;
     font-weight: 700;
     margin: 0;
   }
@@ -61,10 +60,27 @@
   display: inline-block;
   margin-left: 0.3rem;
 }
+ 
 
+@media (max-width: 991.99px) {
+  
+.hero-title {
+ 
+  h2 {
+    font-size:2.6rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.8rem;
+    margin: 0.5rem 0 0;
+  }
+}
+}
 .complaints-sub {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 3.5rem;
   margin-top: 0.5rem;
   color: #555;
 }
@@ -97,7 +113,7 @@
   margin: 0 auto;
 }
 
-/* Each bubble gets its own spot */
+
 .bubble {
   grid-column: span 6;
 }

@@ -1,12 +1,12 @@
 <template>
  
-    <AppHeader />
+     <NuxtLayout>
    <main>
      <NuxtPage />
    </main>
-
+  </NuxtLayout>
    
-    <AppFooter />
+
  <CookieConsent />
 </template>
 

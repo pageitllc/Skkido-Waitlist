@@ -1,10 +1,10 @@
 <template>
   <div v-if="show" class="modal-overlay" @click.self="close">
     <div class="modal">
-      <!-- Close button -->
+
       <button class="modal-close" @click="close">×</button>
 
-      <!-- Success Icon -->
+
       <div class="modal-icon">
         <div class="icon-circle">
           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="green" stroke-width="2">
@@ -13,7 +13,6 @@
         </div>
       </div>
 
-      <!-- Content -->
       <h2 class="modal-title">You have been<br />added to our <span class="highlight">waitlist!</span></h2>
       <p class="modal-text">
         Thanks for signing up 🎉 You’ll be among the first to hear when Skkido goes live

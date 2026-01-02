@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/image": "^2.0.0",
     "aos": "^2.3.4",
     "axios": "^1.12.2",
     "lucide-vue-next": "^0.544.0",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@types/axios": "^0.9.36",
     "@types/node": "^24.6.0",
+    "fusion-binary-ui": "git+https://github.com/pageitllc/fusion-binary-ui-build.git#main",
     "sass-embedded": "^1.93.2"
   }
 }

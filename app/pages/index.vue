@@ -1,21 +1,16 @@
 <template>
+      <AppHeader />
   <div>
     <HomeHero />
+    <ServiceEntrpreneurs />
+    <HomeSectionTwo />
 
-    <!-- Sticky container -->
-    <div class="sticky-wrapper">
-      <section class="home-section-two">
-        <HomeSectionTwo />
-      </section>
-
-      <section class="home-section-three">
-        <HomeSectionThree />
-      </section>
-    </div>
-
+    <Modules />
     <HomeSectionFeature class="home-section-three"/>
+    <HomeSectionThree />
     <HomeSectionFour />
   </div>
+      <AppFooter />
 </template>
 
 
@@ -25,7 +20,8 @@ import HomeSectionTwo from '~/components/home-page/HomeSectionTwo.vue.vue';
 import HomeSectionThree from '~/components/home-page/HomeSectionThree.vue';
 import HomeSectionFeature from '~/components/home-page/HomeSectionFeature.vue';
 import HomeSectionFour from '~/components/home-page/HomeSectionFour.vue';
-
+import ServiceEntrpreneurs from '~/components/home-page/ServiceEntrpreneurs.vue';
+import Modules from '@/components/home-page/Modules.vue'
 import { useHead } from "#app";
 
 useHead({
@@ -84,6 +80,18 @@ useHead({
     { name: "twitter:image", content: "https://skkido.com/og-image.jpg" },
   ],
 });
+
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+
+onMounted(() => {
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+});
 </script>
 
 <style>
@@ -118,13 +126,6 @@ useHead({
   top: 0;
   height: 100vh;  
   z-index: 1;    
-}
-
-.home-section-three {
-  position: relative;
-  z-index: 2;        
-  min-height: 100%;   
-  background: #fff;  
 }
 
 
