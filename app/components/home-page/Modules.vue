@@ -4,26 +4,17 @@
     <div class="scroll-cards__pin">
       <div class="sk-container">
         <div class="scroll-cards__header">
-          <h2  data-aos="fade-up" data-aos-delay="0" class="headline">
+          <h2 data-aos="fade-up" data-aos-delay="0" class="headline">
             One Workspace. <span>One Source Of Truth</span>
           </h2>
-          <p  data-aos="fade-up" data-aos-delay="150">
+          <p data-aos="fade-up" data-aos-delay="150">
             With Skkido, everything related to your client operations lives in one place
           </p>
         </div>
       </div>
 
-
-      <div
-        ref="track"
-        class="scroll-cards__track"
-        :style="desktopTrackStyle"
-      >
-        <article
-          v-for="card in cards"
-          :key="card.key"
-          class="scroll-card"
-        >
+      <div ref="track" class="scroll-cards__track" :style="desktopTrackStyle">
+        <article v-for="card in cards" :key="card.key" class="scroll-card">
           <div class="scroll-card__content">
             <div class="scroll-card__icon">
               <component :is="card.icon" :size="22" stroke-width="1.75" />
@@ -31,25 +22,23 @@
 
             <h3>{{ card.title }}</h3>
             <p>{{ card.description }}</p>
+          </div>
+        </article>
 
-            
+        <!-- LAST CARD - black background -->
+        <article class="scroll-card last-card">
+          <div class="scroll-card__content last-card-content">
+            <h3>And Lots More</h3>
           </div>
         </article>
       </div>
     </div>
 
-
     <div v-if="isDesktop" :style="{ height: `${scrollHeight}px` }" />
 
-
     <div v-if="!isDesktop" class="scroll-pagination">
-      <button
-        v-for="(_, i) in cards"
-        :key="i"
-        class="scroll-pagination__dot"
-        :class="{ active: i === activeIndex }"
-        @click="scrollToCard(i)"
-      />
+      <button v-for="(_, i) in cards" :key="i" class="scroll-pagination__dot" :class="{ active: i === activeIndex }"
+        @click="scrollToCard(i)" />
     </div>
   </section>
 </template>
@@ -60,9 +49,9 @@ import {
   Users,
   Kanban,
   FileCheck,
-  CreditCard
+  CreditCard,
+  MessageCircle
 } from "lucide-vue-next";
-
 
 /* Refs */
 
@@ -79,7 +68,6 @@ const scrollDelay = ref(0);
 let maxScroll = 0;
 let sectionTop = 0;
 
-
 /* Cards */
 
 const cards = [
@@ -88,7 +76,6 @@ const cards = [
     title: "Clients & CRM",
     description:
       "Keep track of your leads, conversations, and active clients in one place.",
-    href: "/solutions/crm",
     icon: Users
   },
   {
@@ -96,7 +83,6 @@ const cards = [
     title: "Projects & Tasks",
     description:
       "Plan, assign, and monitor your work so you deliver on time.",
-    href: "/solutions/projects",
     icon: Kanban
   },
   {
@@ -104,7 +90,6 @@ const cards = [
     title: "Contracts & Approvals",
     description:
       "Create, send, and get sign-offs on contracts with confidence.",
-    href: "/solutions/contracts",
     icon: FileCheck
   },
   {
@@ -112,27 +97,16 @@ const cards = [
     title: "Invoicing & Payments",
     description:
       "Generate invoices and get paid faster with less friction.",
-    href: "/solutions/invoicing",
     icon: CreditCard
   },
   {
-    key: "invoicing",
-    title: "Invoicing & Payments",
+    key: "client-communication",
+    title: "Client Communication",
     description:
-      "Generate invoices and get paid faster with less friction.",
-    href: "/solutions/invoicing",
-    icon: CreditCard
-  },
-  {
-    key: "invoicing",
-    title: "Invoicing & Payments",
-    description:
-      "Generate invoices and get paid faster with less friction.",
-    href: "/solutions/invoicing",
-    icon: CreditCard
+      "Organize all client messages, files, and updates in a simple, centralized space.",
+    icon: MessageCircle
   }
 ];
-
 
 /* Computed */
 
@@ -145,7 +119,6 @@ const desktopTrackStyle = computed(() => {
     transform: `translateX(-${translateX.value}px)`
   };
 });
-
 
 /* Logic */
 
@@ -181,7 +154,6 @@ function scrollToCard(index: number) {
     behavior: "smooth"
   });
 }
-
 
 /* Lifecycle */
 
@@ -279,16 +251,17 @@ onBeforeUnmount(() => {
 @media (max-width: 991.99px) {
 
   .headline {
-  font-size: 2.6rem;
-  font-weight: 500;
-}
+    font-size: 2.6rem;
+    font-weight: 500;
+  }
+
   .scroll-cards__track::-webkit-scrollbar {
-    display: none; 
+    display: none;
   }
 
   .scroll-cards__track {
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .scroll-cards__pin {
@@ -345,6 +318,32 @@ onBeforeUnmount(() => {
   line-height: 1.5;
 }
 
+/* LAST CARD SPECIFIC */
+.scroll-card.last-card {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 420px;
+  border-radius: 28px;
+}
+
+.scroll-card.last-card .scroll-card__content {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  text-align: center;
+}
+
+.scroll-card.last-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 /* Pagination */
 .scroll-pagination {
   display: flex;
@@ -372,5 +371,4 @@ onBeforeUnmount(() => {
     display: none;
   }
 }
-
 </style>
