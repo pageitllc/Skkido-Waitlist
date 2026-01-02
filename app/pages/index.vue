@@ -25,7 +25,7 @@ import Modules from '@/components/home-page/Modules.vue'
 import { useHead } from "#app";
 
 useHead({
-  title: "Skkido – Client & business management software for independents.",
+  title: "Skkido – All-in-One Client & Business Management for Independents",
 
   link: [
     {
@@ -46,21 +46,19 @@ useHead({
   meta: [
     {
       name: "description",
-    content:
-        "Skkido is the all-in-one platform for independent businesses. Manage clients, projects, contracts, and payments in one place.",
+      content:
+        "Skkido is the all-in-one platform empowering independent businesses to effortlessly manage clients, projects, contracts, and payments — all in one place.",
     },
 
- 
-    
-  // Open Graph
+    // Open Graph
     {
       property: "og:title",
-      content: "Skkido – Client & business management software for independents.",
+      content: "Skkido – All-in-One Client & Business Management for Independents",
     },
     {
       property: "og:description",
       content:
-        "Skkido empowers independent businesses and agencies to manage clients and grow with confidence. One platform, built for modern independents.",
+        "Simplify your client operations and grow your independent business with Skkido — a modern platform designed for freelancers, agencies, and solo entrepreneurs.",
     },
     { property: "og:image", content: "https://skkido.com/og-image.jpg" },
     { property: "og:url", content: "https://skkido.com" },
@@ -70,12 +68,12 @@ useHead({
     { name: "twitter:card", content: "summary_large_image" },
     {
       name: "twitter:title",
-      content: "Skkido – Client & business management software for independents.",
+      content: "Skkido – All-in-One Client & Business Management for Independents",
     },
     {
       name: "twitter:description",
       content:
-        "The smarter way for independents to manage clients and grow. Skkido is the all-in-one business management platform for modern independents.",
+        "Manage clients, projects, contracts, and payments with ease. Skkido is the smart choice for freelancers, agencies, and independents looking to grow.",
     },
     { name: "twitter:image", content: "https://skkido.com/og-image.jpg" },
   ],

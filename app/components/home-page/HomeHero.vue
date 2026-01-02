@@ -53,11 +53,12 @@ onMounted(async () => {
         }
       }
     );
-    subscriberCount.value = res.subscribers;
+    subscriberCount.value = res.subscribers + 350; 
   } catch (err) {
     console.error("Failed to load subscriber count", err);
   }
 });
+
 
 </script>
 
