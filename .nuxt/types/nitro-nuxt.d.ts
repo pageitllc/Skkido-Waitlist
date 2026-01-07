@@ -1,7 +1,7 @@
 
 /// <reference path="app.config.d.ts" />
 /// <reference path="runtime-config.d.ts" />
-/// <reference types="/Users/tommys/Documents/Skkido/Website/Coming-soon-app/node_modules/@nuxt/nitro-server/dist/index.mjs" />
+/// <reference types="/Users/xavier/Documents/Websites/Skkido/Skkido-Waitlist/node_modules/@nuxt/nitro-server/dist/index.mjs" />
 /// <reference path="../image/providers.d.ts" />
 /// <reference path="nitro-middleware.d.ts" />
 
