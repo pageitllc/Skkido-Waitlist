@@ -6,7 +6,7 @@
     <HomeSectionTwo />
 
     <Modules />
-    <HomeSectionFeature class="home-section-three"/>
+    <!-- <HomeSectionFeature class="home-section-three"/> -->
     <HomeSectionThree />
     <HomeSectionFour />
   </div>

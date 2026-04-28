@@ -1,11 +1,12 @@
 <template>
   <div class="sk-container py-5">
     <div class="content-wrapper">
-      <h2  data-aos="fade-up" data-aos-delay="0">Built for service entrepreneurs</h2>
-      <p  data-aos="fade-up" data-aos-delay="150">
-        Skkido is designed for people who sell expertise and time — not products.
-        Whether you’re a freelancer, consultant, agency, or small service business,
-        Skkido helps you manage client operations from first conversation to final payment without juggling tools.
+      <h2 data-aos="fade-up" data-aos-delay="0">Most platforms see your clients.
+        Skkido understands them.</h2>
+      <p data-aos="fade-up" data-aos-delay="150">
+        Every client relationship leaves signals. A conversation that went quiet. A project that stopped moving. A
+        payment that never came. Skkido collects those signals across every touchpoint and tells you the real state of
+        every relationship in real time.
       </p>
     </div>
   </div>
@@ -31,10 +32,11 @@
 }
 
 h2 {
-  font-size: 3.375rem;
+  font-size: clamp(2.5rem,3.5vw,3rem);
   margin-bottom: 1.25rem;
   font-family: 'ProximaNova', sans-serif;
   color: #222;
+  font-weight: 500;
 }
 
 p {
@@ -49,7 +51,7 @@ p {
 @media (max-width: 991.99px) {
 
   h2 {
-      font-size:2.6rem;
+    font-size: 2.6rem;
     margin-bottom: 1.25rem;
     font-family: 'ProximaNova', sans-serif;
     color: #222;

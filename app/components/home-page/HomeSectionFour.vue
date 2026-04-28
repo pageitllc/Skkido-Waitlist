@@ -1,18 +1,19 @@
 <template>
-  <section >
+  <section>
     <div class="sk-container p-0">
       <div class="cta-section">
         <div class="cta-image">
-          <NuxtImg src="/social-integration-working-team.jpg"
-            alt="Happy user on laptop" />
+          <NuxtImg src="/social-integration-working-team.jpg" alt="Happy user on laptop" />
         </div>
         <div class="cta-content">
-          <h2>Be the first to try Skkido</h2>
+          <h2>You made it this far. You already know.</h2>
           <p>
-            You read all the way down here, so don’t try telling us you’re not interested.
-            Sign up for the waitlist. Then never look back.
+            Join the beta and become a founding user. You'll get early access, shape the product with your feedback, and
+            lock in founder pricing before we open to everyone.
           </p>
-          <NuxtLink to="/waitlist" class="cta-button">I’m in, put me on the list</NuxtLink>
+          <FusionButton link="https://auth.skkido.com" target="_blank" variant="solid" size="md">
+            I’m in, put me on the list
+          </FusionButton>
         </div>
       </div>
     </div>
@@ -21,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-
+import FusionButton from '~/button/FusionButton.vue';
 </script>
 
 <style scoped>

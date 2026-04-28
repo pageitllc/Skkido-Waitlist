@@ -1,9 +1,9 @@
 <template>
   <section class="sk-hero-section py-5">
     <div class="hero-title">
-        <h2 class="complaints-sub">One problem.</h2>
+        <h2 class="complaints-sub">This is what managing clients </h2>
       <h2 class="complaints-title">
-        <span class="handwritten">Many frustrations.</span>
+        <span class="handwritten">actually feels like.</span>
       </h2>
     </div>
 
@@ -40,8 +40,8 @@
   margin-bottom: 5rem;
 
   h2 {
-    font-size:3.375rem;
-    font-weight: 700;
+    font-size:clamp(2.5rem,3.5vw,3rem);
+    font-weight: 500;
     margin: 0;
   }
 
@@ -67,8 +67,8 @@
 .hero-title {
  
   h2 {
-    font-size:2.6rem;
-    font-weight: 700;
+    font-size:clamp(2.5rem,3.5vw,3rem);
+    font-weight: 500;
     margin: 0;
   }
 
@@ -82,7 +82,6 @@
   text-align: center;
   font-size: 3.5rem;
   margin-top: 0.5rem;
-  color: #555;
 }
 
 

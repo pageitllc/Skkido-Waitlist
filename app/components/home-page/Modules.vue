@@ -4,26 +4,29 @@
     <div class="scroll-cards__pin">
       <div class="sk-container">
         <div class="scroll-cards__header">
-          <h2 data-aos="fade-up" data-aos-delay="0" class="headline">
-            One Workspace. <span>One Source Of Truth</span>
-          </h2>
-          <p data-aos="fade-up" data-aos-delay="150">
-            With Skkido, everything related to your client operations lives in one place
-          </p>
+         <h2 data-aos="fade-up" data-aos-delay="0" class="headline">
+  One engine. <span>Five interfaces.</span>
+</h2>
+<p data-aos="fade-up" data-aos-delay="150">
+  Each interface feeds signals into the same intelligence layer. Start with what's live today and grow as new interfaces launch.
+</p>
         </div>
       </div>
 
       <div ref="track" class="scroll-cards__track" :style="desktopTrackStyle">
-        <article v-for="card in cards" :key="card.key" class="scroll-card">
-          <div class="scroll-card__content">
-            <div class="scroll-card__icon">
-              <component :is="card.icon" :size="22" stroke-width="1.75" />
-            </div>
-
-            <h3>{{ card.title }}</h3>
-            <p>{{ card.description }}</p>
-          </div>
-        </article>
+       <article v-for="card in cards" :key="card.key" class="scroll-card">
+  <div class="scroll-card__content">
+    <div class="scroll-card__top">
+      <div class="scroll-card__icon">
+        <component :is="card.icon" :size="22" stroke-width="1.75" />
+      </div>
+      <span v-if="card.status === 'live'" class="badge-live">Live</span>
+      <span v-else class="badge-soon">Coming soon</span>
+    </div>
+    <h3>{{ card.title }}</h3>
+    <p>{{ card.description }}</p>
+  </div>
+</article>
 
         <!-- LAST CARD - black background -->
         <article class="scroll-card last-card">
@@ -48,10 +51,10 @@ import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import {
   Users,
   Kanban,
-  FileCheck,
   CreditCard,
-  MessageCircle
-} from "lucide-vue-next";
+  MessageCircle,
+  Monitor
+} from "lucide-vue-next"
 
 /* Refs */
 
@@ -73,40 +76,40 @@ let sectionTop = 0;
 const cards = [
   {
     key: "crm",
-    title: "Clients & CRM",
-    description:
-      "Keep track of your leads, conversations, and active clients in one place.",
-    icon: Users
+    title: "Client relationships",
+    description: "Leads, deals, proposals, contracts, and contacts — one pipeline that runs your entire client relationship without switching tabs.",
+    icon: Users,
+    status: "live"
   },
   {
     key: "projects",
-    title: "Projects & Tasks",
-    description:
-      "Plan, assign, and monitor your work so you deliver on time.",
-    icon: Kanban
-  },
-  {
-    key: "contracts",
-    title: "Contracts & Approvals",
-    description:
-      "Create, send, and get sign-offs on contracts with confidence.",
-    icon: FileCheck
+    title: "Project management",
+    description: "Tasks, deliverables, timelines, and files — all connected to the client and contract they belong to.",
+    icon: Kanban,
+    status: "coming-soon"
   },
   {
     key: "invoicing",
-    title: "Invoicing & Payments",
-    description:
-      "Generate invoices and get paid faster with less friction.",
-    icon: CreditCard
+    title: "Invoicing & payments",
+    description: "Send branded invoices, collect payments, and track what's outstanding — all from the same place the work was delivered.",
+    icon: CreditCard,
+    status: "coming-soon"
   },
   {
-    key: "client-communication",
-    title: "Client Communication",
-    description:
-      "Organize all client messages, files, and updates in a simple, centralized space.",
-    icon: MessageCircle
+    key: "collab",
+    title: "Collaboration",
+    description: "Channels, threads, file sharing, and message-to-task conversion — built directly into every project and client relationship.",
+    icon: MessageCircle,
+    status: "coming-soon"
+  },
+  {
+    key: "client-portal",
+    title: "Client portal",
+    description: "Clients log in, see the breakdown, check progress, complete actions, and pay invoices — without touching your workspace.",
+    icon: Monitor,
+    status: "live"
   }
-];
+]
 
 /* Computed */
 
@@ -222,7 +225,7 @@ onBeforeUnmount(() => {
 .scroll-cards__header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   margin-bottom: 4rem;
 }
 
@@ -370,5 +373,34 @@ onBeforeUnmount(() => {
   .scroll-pagination {
     display: none;
   }
+}
+
+.scroll-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.scroll-card__icon {
+  margin-bottom: 0;
+}
+
+.badge-live {
+  font-size: 11px;
+  font-weight: 500;
+  background: #EAF3DE;
+  color: #27500A;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.badge-soon {
+  font-size: 11px;
+  font-weight: 500;
+  background: #F1EFE8;
+  color: #5F5E5A;
+  padding: 3px 10px;
+  border-radius: 99px;
 }
 </style>

@@ -1,192 +1,352 @@
 <template>
-    <section class="sk-container py-5">
-        <div class="sk-hero-section">
-            <div class="sk-hero-section__col-1">
-                <span class="pill">Alpha mode: activated! ⚡️ Dive in early.</span>
-                <h1 data-aos="fade-up" data-aos-delay="0">The client operations workspace for service businesses.</h1>
-                <p data-aos="fade-up" data-aos-delay="150">Run your entire service business from one place. Skkido brings CRM, projects, contracts, invoicing, payments, and client communication together into a single, connected workspace built for client work.</p>
-                <div  class="creators">
-                    <div class="creators__avatars">
-                        <img v-for="(avatar, i) in avatars" :key="i" :src="avatar" alt="Creator avatar"
-                            class="creators__avatar" />
-                    </div>
-                    <span  v-if="subscriberCount" class="creators__text">{{ subscriberCount }} + professionals have secured their spot!</span>
-                </div>
-                <NuxtLink to="/waitlist" class="btn">
-                    Put me on the waitlist
-                </NuxtLink>
+  <section data-header-bg="#FFFFFF" data-header-mode="" style="background-color: #FFFFFF;">
+    <div class="sk-container">
+
+      <div style="display: flex; flex-direction: column; gap:0;">
+
+        <div class="title-section">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            <span>Now in beta</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="hero-line line-1">The client intelligence platform that knows what's next.</span>
+            <!-- <span class="hero-line line-2">One workspace.</span>
+            <span class="hero-line line-3">Fewer tools.</span> -->
+          </h1>
+
+
+          <p>Skkido doesn't just store your client data. It reads it. It watches for communication gaps, stalled projects, and late payments, then tells you exactly which clients need your attention before things go wrong.</p>
+          <span>
+
+          </span>
+
+          <div class="cta-wrapper">
+            <div class="flex flex--column flex--gap-sm">
+              <FusionButton variant="ctaSecondary" size="md" text="Join the Beta "  link="https://docs.skkido.com"                           
+      target="_blank"                   />
+              <span class="text-xs">Limited Spots Available</span>
             </div>
-            <client-only>
-            <div class="sk-hero-section__col-2">
-                <img data-aos="fade-up" data-aos-delay="50" src="~/assets/images/Frame-48445.png" class="task-image" width="100%" alt=""></img>
-            </div>
-            </client-only>
+
+          </div>
+
         </div>
-    </section>
+
+
+        <div class="hero-section">
+          <div class="card card-left-top">
+            <NuxtImg src="/images/image-top-left.svg" />
+          </div>
+
+          <div class="card card-left-bottom">
+            <NuxtImg src="/images/image-bottom-left.svg" />
+          </div>
+
+          <div class="card card-right">
+            <NuxtImg src="/images/skkido-top-right.jpg" />
+          </div>
+
+          <div class="main-media">
+            <NuxtImg src="/images/skkido-desktop.png" />
+          </div>
+        </div>
+      </div>
+
+
+     
+    </div>
+  </section>
 </template>
 
-<script setup lang="ts">
-const avatars = [
-    'avatars/avatar1.png',
-    'avatars/avatar2.png',
-    'avatars/avatar6.png',
-    'avatars/avatar4.png',
-    'avatars/avatar5.png',
-    'avatars/avatar3.png',
+<script setup lang="js">
+import { onMounted, onBeforeUnmount } from "vue";
+import FusionButton from "@/button/FusionButton.vue";
 
-]
+let onScroll;
 
+onMounted(() => {
+  const main = document.querySelector(".main-media");
+  const cards = document.querySelectorAll(".card");
 
+  if (!main || !cards.length) return;
 
-import { ref, onMounted } from "vue";
+  onScroll = () => {
+    const scroll = window.scrollY;
+    const max = window.innerHeight;
+    const p = Math.min(scroll / max, 1);
 
-const subscriberCount = ref<number | null>(null);
+    /* MAIN MEDIA */
+    main.style.transform = `scale(${1 + p * 0.25}) translateY(${25 * p}px)`;
+    main.style.width = `${65 + (95 - 65) * p}%`;
 
-onMounted(async () => {
-  try {
-    const config = useRuntimeConfig();
-    const res = await $fetch<{ subscribers: number }>(
-      `${config.public.apiBase}/list-stats`,
-      {
-        headers: {
-          "x-api-key": config.public.apiKey
-        }
-      }
-    );
-    subscriberCount.value = res.subscribers + 265; 
-  } catch (err) {
-    console.error("Failed to load subscriber count", err);
-  }
+    /* FLOATING CARDS */
+    cards.forEach(card => {
+      const s = 1 - p * 0.32;
+      const mx = p * 150;
+      const my = p * 40;
+      const dir = card.classList.contains("card-right") ? 1 : -1;
+
+      card.style.transform = `scale(${s}) translate(${mx * dir}px, ${my}px)`;
+    });
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
 });
 
-
+onBeforeUnmount(() => {
+  if (onScroll) {
+    window.removeEventListener("scroll", onScroll);
+  }
+});
 </script>
 
-<style lang="scss" scoped>
-.sk-hero-section {
-    display: flex;
+<style scoped lang="scss">
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 
-    &__col-1 {
-        flex: 1;
-        padding-right: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            color: #737373;
-        }
-
-        .pill {
-            display: inline-block;
-            width: fit-content;
-            padding: 0.5rem 1rem;
-            background-color: #A2878B;
-            border-radius: 9999px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #fff;
-            text-align: center;
-            line-height: 1.2;
-        }
-
-        .creators {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-
-            &__avatars {
-                display: flex;
-
-                .creators__avatar {
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    border: 2px solid #fff;
-                    margin-left: -10px;
-                    object-fit: cover;
-
-                    &:first-child {
-                        margin-left: 0;
-                    }
-                }
-            }
-
-            &__text {
-                font-size: 1rem;
-                color: #737373;
-                width: 25%;
-            }
-        }
-
-        .btn {
-            background-color: var(--skkido-color-secondary);
-            width: fit-content;
-            color: var(--skkido-color-prinary);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 1rem;
-            text-decoration: none;
-
-            &:hover {
-                background-color: #FFEBC3;
-            }
-        }
-    }
-
-    &__col-2 {
-
-        .task-image {
-            width: 600px;
-        }
-
-    }
 }
 
-@media (max-width: 990px) {
-    .sk-hero-section {
-        flex-direction: column !important;
-        align-items: left;
-        text-align: left;
-        gap: 1rem;
+/* MAIN IMAGE */
+.main-media {
+  width: 65%;
+  max-width: 1000px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  z-index: 1;
+  transition: transform 0.15s ease-out, width 0.15s ease-out;
+  // box-shadow:
+  //   0 20px 40px rgba(0, 0, 0, 0.08),
+  //   0 6px 12px rgba(0, 0, 0, 0.04);
+}
 
-        &__col-1 {
-            padding-right: 0;
-            margin-bottom: 1rem;
 
-            h1 {
-                font-size: 2.5rem;
-            }
 
-            p {
-                font-size: 0.9rem;
-            }
+.main-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
 
-            .creators {
-                &__text {
-                    width: 100%;
-                }
-            }
-        }
+/* FLOATING CARDS */
+.card {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0.9;
+  transition: transform 0.25s ease-out;
+  z-index: 1;
+  box-shadow:
+    inset 0 12px 28px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05)
+}
 
-        &__col-2 {
-            .task-image {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
-    }
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card-left-top {
+  width: 373px;
+  top: 5%;
+  left: 0;
+}
+
+.card-left-bottom {
+  width: 203px;
+  bottom: 0;
+  left: 0;
+}
+
+.card-right {
+  width: 240px;
+  top: 5%;
+  right: 0;
+}
+
+/* CTA */
+.cta-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 1rem
+}
+
+
+/* Title section */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+
+  margin: 0 auto 28px;
+  width: fit-content;
+
+  line-height: 1;
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    background: #00a869;
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: blink 2s infinite;
+  }
+}
+
+.title-section {
+  text-align: center;
+  padding-top: 10rem;
+
+
+  display: flex;
+  flex-direction: column;
+}
+
+.title-section h1 {
+  font-size: clamp(3.5rem, .5rem + .961538vw, 1rem);
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.25;
+}
+
+.title-section p {
+  max-width: 720px;
+  margin: 20px auto 0;
+  font-size: 1rem;
+  color: var(--fu-brand-primary-base);
+  line-height: 2rem;
+
+}
+
+.hero-tools {
+  padding: 80px 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.hero-tools__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.hero-tools__title {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 500;
+  color: #1a0d08;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.hero-tools__desc {
+  font-size: 15px;
+  color: #1a0d08;
+  line-height: 1.65;
+  max-width: 500px;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  /* Hide floating cards */
+  .card {
+    display: none;
+  }
+
+  /* Hero layout */
+  .hero-section {
+    height: auto;
+    min-height: unset;
+    padding: 40px 0;
+    margin: 0px
+  }
+
+  /* Main media becomes the hero */
+  .main-media {
+    width: 100% !important;
+    max-width: 100%;
+    top: 0;
+    transform: none !important;
+  }
+
+  .main-media img {
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+  }
+
+  /* Title adjustments */
+  .title-section {
+    padding-top: 10rem;
+  }
+
+  .title-section h1 {
+    font-size: 40px;
+    line-height: 1.3;
+  }
+
+  .title-section p {
+    font-size: 16px;
+  }
+}
+
+.hero-tools {
+  text-align: center;
+
+  &__title {
+    font-size: clamp(2rem, .5rem + .961538vw, 1rem);
+
+  }
+
+  img {
+    width: 500px;
+    max-width: 100%;
+  }
+}
+
+.hero-title {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.25;
+}
+
+.hero-line {
+  display: inline;
+}
+
+.line-3 {
+  display: block;
+}
+
+@media (max-width: 991.99px) {
+  .hero-line {
+    display: block;
+  }
 }
 </style>
