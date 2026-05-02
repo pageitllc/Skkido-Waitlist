@@ -10,7 +10,7 @@
       <client-only>
     <div class="chat-container">
       <ComplaintBubble  data-aos="zoom-in" data-aos-delay="50" avatar="/avatars/avatar1.png"
-        message="Sometimes clients don’t even make payment after I’ve delivered the work — I have no protection."
+        message="I had no idea a client was unhappy until they asked for a refund. Nothing flagged it. I just missed it."
         bubbleColor="#1E63E9" class="bubble bubble--1" />
 
       <ComplaintBubble  data-aos="zoom-in" data-aos-delay="100" avatar="/avatars/avatar2.png"
@@ -18,15 +18,15 @@
         bubbleColor="#F35106" class="bubble bubble--2" />
 
       <ComplaintBubble  data-aos="zoom-in" data-aos-delay="150" avatar="/avatars/avatar3.png"
-        message="When I bring in other professionals to help on a project, I can’t track their tasks or payments properly. It turns into a mess of spreadsheets, chats, and manual follow-ups."
+        message="I'm managing six clients across WhatsApp, email, and three different tools. I genuinely don't know which ones need my attention right now."
         bubbleColor="#2A0808" class="bubble bubble--3" />
 
       <ComplaintBubble  data-aos="zoom-in" data-aos-delay="200" avatar="/avatars/avatar4.png"
-        message="Managing different clients across emails, chats, and scattered files is a nightmare. I waste hours just trying to keep everything in one place instead of focusing on the actual work."
+        message="A client went quiet for three weeks. I assumed everything was fine. It wasn't."
         bubbleColor="#2A7D2E" class="bubble bubble--4" />
 
       <ComplaintBubble  data-aos="zoom-in" data-aos-delay="250" avatar="/avatars/avatar5.png"
-        message="I can’t keep paying for Slack, Notion, a CRM, and a project management tool. It’s too expensive and fragmented."
+        message="Coordinating between my client and the people helping me on the project — I'm the only thing holding it together. One thing slips and everything breaks."
         bubbleColor="#FFD600" class="bubble bubble--5" />
     </div>
 </client-only>
