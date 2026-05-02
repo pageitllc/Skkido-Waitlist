@@ -14,6 +14,7 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 
+export const 404: typeof import("../app/components/404.vue")['default']
 export const AppFooter: typeof import("../app/components/AppFooter.vue")['default']
 export const AppHeader: typeof import("../app/components/AppHeader.vue")['default']
 export const ComplaintBubble: typeof import("../app/components/ComplaintBubble.vue")['default']
@@ -54,6 +55,7 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
+export const Lazy404: LazyComponent<typeof import("../app/components/404.vue")['default']>
 export const LazyAppFooter: LazyComponent<typeof import("../app/components/AppFooter.vue")['default']>
 export const LazyAppHeader: LazyComponent<typeof import("../app/components/AppHeader.vue")['default']>
 export const LazyComplaintBubble: LazyComponent<typeof import("../app/components/ComplaintBubble.vue")['default']>

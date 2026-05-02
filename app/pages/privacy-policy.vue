@@ -233,7 +233,7 @@ useHead({
 .privacy-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 71px 20px;
   background: #fff;
   color: #333;
   line-height: 1.6;

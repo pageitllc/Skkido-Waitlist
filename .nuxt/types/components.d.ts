@@ -14,6 +14,7 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 interface _GlobalComponents {
+  '404': typeof import("../../app/components/404.vue")['default']
   'AppFooter': typeof import("../../app/components/AppFooter.vue")['default']
   'AppHeader': typeof import("../../app/components/AppHeader.vue")['default']
   'ComplaintBubble': typeof import("../../app/components/ComplaintBubble.vue")['default']
@@ -54,6 +55,7 @@ interface _GlobalComponents {
   'Html': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Html']
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Body']
   'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
+  'Lazy404': LazyComponent<typeof import("../../app/components/404.vue")['default']>
   'LazyAppFooter': LazyComponent<typeof import("../../app/components/AppFooter.vue")['default']>
   'LazyAppHeader': LazyComponent<typeof import("../../app/components/AppHeader.vue")['default']>
   'LazyComplaintBubble': LazyComponent<typeof import("../../app/components/ComplaintBubble.vue")['default']>
